@@ -1,0 +1,95 @@
+<div class="back">
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+        id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+            <a routerLink="/lavoro" class="offcanvas-title" id="offcanvasScrollingLabel">Spazio di lavoro</a>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <hr>
+            <a href="#"><i class="bi bi-trello"></i> Bacheche</a>
+            <a href="#"><i class="fa-regular fa-user"></i> Membri</a>
+            <a href="#"><i class="bi bi-gear"></i> Impostazioni dello Spazio di lavoro</a>
+            <h6>Viste dello Spazio di lavoro</h6>
+            <a href="#"><i class="bi bi-card-list"></i> Tabella</a>
+            <a href="#"><i class="fa-regular fa-calendar-days"></i> Calendario</a>
+            <h6>Le tue bacheche</h6>
+            <a href="#">Attività</a>
+        </div>
+    </div>
+
+    <div class="navbar navbar-expand ">
+        <div class="container-fluid">
+            <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling"
+                aria-controls="offcanvasScrolling"><i class="bi bi-menu-button-wide-fill"></i></button>
+            <a class="navbar-brand" id="title">test</a>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><i class="far fa-star"></i></a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <button type="button" class="btn btn-light" data-bs-toggle="modal"
+                            data-bs-target="#shareModal"><i class="bi bi-share"></i> Condividi</button>
+
+                        <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="shareModalLabel">Condividi con</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <select class="form-select">
+                                            <option>Scegli...</option>
+                                            <option *ngFor="let u of utenti" [value]="u._id">{{ u.cognome }} {{ u.nome
+                                                }}</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                        <button type="button" class="btn" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                            aria-controls="offcanvasRight"><i class="bi bi-three-dots"></i></button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <hr>
+            <a href="#"><i class="bi bi-trello"></i> Cos'è questa bacheca</a>
+            <a href="#"><i class="bi bi-images"></i> Cambia Sfondo</a>
+            <a href="#">Campi personalizzati</a>
+            <a href="#"><i class="fa-regular fa-note-sticky"></i> Adesivi</a>
+            <a href="#"><i class="bi bi-three-dots"></i> Altro</a>
+            <hr>
+            <a href="#">
+                <i class="bi bi-lightning-fill"></i>Automazione<br>
+                Automatizza le schede e molto altro...
+            </a>
+            <hr>
+            <a href="#">
+                <i class="bi bi-rocket-takeoff-fill"></i> Power-up<br>
+                Google Drive e altro ancora...
+            </a>
+            <hr>
+            <a href="#"><i class="bi bi-list-ul"></i> Attività</a>
+        </div>
+    </div>
+    <app-lista></app-lista>
+</div>

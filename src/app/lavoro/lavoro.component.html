@@ -1,0 +1,73 @@
+<div class="back">
+    <div class="bar">
+        <input type="text" class="title" id="title" value="Spazio di lavoro"> <i class="bi bi-pencil"></i>
+
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#shareModal">
+            <i class="bi bi-person-plus"></i> Invita membri dello Spazio di lavoro
+        </button>
+        <div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="shareModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="shareModalLabel">Invita nello Spazio di lavoro</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <select class="form-select">
+                            <option>Scegli...</option>
+                            <option *ngFor="let u of utenti" [value]="u._id">{{ u.cognome }} {{ u.nome
+                                }}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="bacheche">
+        <h5>Bacheca</h5>
+        <div class="modal fade" id="exampleModalToggle" aria-labelledby="exampleModalToggleLabel" tabindex="-1"
+            aria-hidden="true" style="display: none">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-6">Crea Bacheca</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <h6>Sfondo</h6>
+                    <div class="bg-list">
+                        <div *ngFor="let sfondo of sfondi" (click)="selezionaSfondo(sfondo)">
+                            <img [src]="sfondo.url" alt="Sfondo" />
+                        </div>
+                    </div>
+                    <form class="was-validated title">
+                        <label for="validationInput">Titolo della bacheca</label>
+                        <input type="text" class="form-control" id="validationInput" placeholder="Inserisci un titolo"
+                            required="" />
+                        <div class="invalid-feedback">
+                            Il titolo della bacheca è obbligatorio.
+                        </div>
+                    </form>
+                    <hr>
+                    <div class="privacy">
+                        <h6>Visibilità</h6>
+                        <select class="form-select form-select-sm">
+                            <option value="1">Privata</option>
+                            <option value="2">Spazio di lavoro</option>
+                            <option value="3">Pubblica</option>
+                        </select>
+                    </div>
+                    <br>
+                    <div class="d-grid gap-2 col-10 mx-auto">
+                        <button class="btn" type="button">Crea</button>
+                        <button class="btn" type="button">Inizia con un modulo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="dropbtn crea" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">
+            Crea
+        </button>
+        <button type="button" class="btn link" routerLink="/bacheca">test</button>
+    </div>
+</div>

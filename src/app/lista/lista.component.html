@@ -1,0 +1,36 @@
+<div class="back">
+
+    <div class="cardGroup">
+        <div class="card">
+            <div class="btn-group dropend">
+                <input type="text" class="textContent cardtitle" value="Da fare">
+                <button type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="bi bi-three-dots"></i>
+                </button>
+                <ul class="dropdown-menu">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">
+                            Azioni sulla lista
+                        </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <hr>
+                    <div class="mb-3">
+                        <label for="task">Condividi lista con:</label>
+                        <select class="form-select">
+                            <option>Scegli...</option>
+                            <option *ngFor="let u of utenti" [value]="u._id">{{ u.cognome }} {{ u.nome }}</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn share">
+                        <i class="bi bi-share"></i> Condividi
+                    </button>
+                </ul>
+            </div>
+            <input type="text" id="cardList" class="textContent cardList" placeholder="+ Aggiungi una scheda">
+        </div>
+
+        <div class="form-floating mt-3 card-wrap">
+            <input type="text" id="newCards" class="textContent newCards" placeholder="+ Aggiungi un'altra lista">
+        </div>
+    </div>

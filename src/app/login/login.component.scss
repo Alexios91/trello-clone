@@ -1,0 +1,80 @@
+//Variabili
+$primary-color: #ff6b6b;
+$secondary-color: #ffa500;
+$tertiary-color: #ffd700;
+$color: #ccc;
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+
+    h1 {
+        color: $secondary-color;
+    }
+
+    .form-floating {
+        &:focus-within {
+            z-index: 2;
+        }
+
+        input {
+            margin-bottom: 0;
+            border-radius: 0;
+
+            &#email {
+                border-radius: 5px 5px 0 0;
+            }
+
+            &#password {
+                border-radius: 0 0 5px 5px
+            }
+
+            &:focus {
+                border-color: $tertiary-color;
+                box-shadow: 0 0 0 2px $tertiary-color;
+            }
+        }
+
+        .password-toggle {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+            z-index: 1;
+
+            i {
+                position: relative;
+                display: block;
+                font-size: 18px;
+                line-height: 1;
+                color: $color;
+            }
+
+            i.fa-eye-slash:before {
+                content: "\f070"; // Occhio chiuso
+            }
+
+            i.fa-eye:before {
+                content: "\f06e"; // Occhio aperto
+            }
+        }
+    }
+
+    p {
+        font-size: 1.14em;
+        margin: 25px 5px 5px 5px;
+        color: $color;
+
+        a {
+            font-size: 1.1em;
+            text-decoration: none;
+            color: $primary-color;
+            cursor: pointer;
+
+            &:hover {
+                color: $secondary-color;
+            }
+        }
+    }
+}

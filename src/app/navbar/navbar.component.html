@@ -1,0 +1,133 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <i class="fa-brands fa-trello"></i>Trello
+        </a>
+
+        <div class="collapse navbar-collapse" *ngIf="showNav && !showLog">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Spazio di lavoro
+                    </a>
+                    <div class="dropdown-content ">
+                        <a href="#">Azione 1</a>
+                        <a href="#">Azione 2</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Recenti
+                    </a>
+                    <div class="dropdown-content ">
+                        <a href="#">Azione 1</a>
+                        <a href="#">Azione 2</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Preferiti
+                    </a>
+                    <div class="dropdown-content ">
+                        <a href="#">Azione 1</a>
+                        <a href="#">Azione 2</a>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        Modelli
+                    </a>
+                    <div class="dropdown-content ">
+                        <a href="#">Azione 1</a>
+                        <a href="#">Azione 2</a>
+                    </div>
+                </li>
+
+                <div class="btn-group">
+                    <button type="button" class="dropbtn crea" data-bs-toggle="dropdown" aria-expanded="true">Crea
+                    </button>
+                    <ul class="dropdown-menu crea">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel">Menu</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
+                        </div>
+                        <hr>
+                        <h6>Sfondo</h6>
+                        <div class="bg-list">
+                            <div *ngFor="let sfondo of sfondi" (click)="selezionaSfondo(sfondo)">
+                                <img [src]="sfondo.url" alt="Sfondo">
+                            </div>
+                        </div>
+                        <form class="was-validated title">
+                            <label for="validationInput">Titolo della bacheca</label>
+                            <input type="text" class="form-control" id="validationInput"
+                                placeholder="Inserisci un titolo" required="" />
+                            <div class="invalid-feedback">
+                                Il titolo della bacheca è obbligatorio.
+                            </div>
+                        </form>
+                        <hr>
+                        <div>
+                            <h6>Visibilità</h6>
+                            <select class="form-select form-select-sm">
+                                <option value="1">Privata</option>
+                                <option value="2">Spazio di lavoro</option>
+                                <option value="3">Pubblica</option>
+                            </select>
+                        </div>
+                        <br>
+                        <div class="d-grid gap-2 col-10 mx-auto">
+                            <button class="btn" type="button">Crea</button>
+                            <button class="btn" type="button">Inizia con un modulo</button>
+                        </div>
+                    </ul>
+                </div>
+            </ul>
+
+            <form class="d-flex" role="search" (keyup.enter)="submitSearch()">
+                <input class="form-control me-2" type="search" placeholder="Cerca" aria-label="Cerca">
+                <div class="input-group-append">
+                    <span class="input-group-text"><i class="fas fa-search"></i></span>
+                </div>
+            </form>
+
+            <div class="btn-group iniziali-utente">
+                <button type="button" class="dropbtn " id="iniziali-utente" data-bs-toggle="dropdown"
+                    aria-expanded="true">
+                    {{ iniziali }}
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <h6>ACCOUNT</h6>
+                    <div class="utente">
+                        <p>{{ utenteLoggato?.nome }} {{ utenteLoggato?.cognome }}</p>
+                        <p>{{ utenteLoggato?.email }}</p>
+                    </div>
+                    <hr>
+                    <a href="#">Scambia Account</a>
+                    <a href="#">Gestisci Account</a>
+                    <hr>
+                    <h6>PROFILO</h6>
+                    <a href="#">Profilo e visibilità</a>
+                    <a href="#">Attività</a>
+                    <a href="#">Schede</a>
+                    <a href="#">Impostazioni</a>
+                    <hr>
+                    <a (click)="logout()" class="logout"><i class="bi bi-box-arrow-left"></i> Logout</a>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="navLog" *ngIf="showLog">
+            <a class="btn btn-md btn-danger" role="button" routerLink="/login">Login</a>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,25 @@
+<main class="form-signin w-100 mt-5 m-auto">
+    <form class="mt-5" [formGroup]="frm" (ngSubmit)="login()">
+        <h1 class="h1 fw-normal">Accedi</h1>
+
+        <div class="form-floating">
+            <input [(ngModel)]="model.email" type="email" class="form-control" id="email"
+                placeholder="Email@example.com" formControlName="email">
+            <label for="email">Email</label>
+        </div>
+        <div class="form-floating">
+            <input [(ngModel)]="model.password" type="{{ showPassword ? 'text' : 'password' }}" class="form-control"
+                id="password" placeholder="Password" formControlName="password">
+            <label for="password">Password</label>
+            <span class="password-toggle" (click)="togglePasswordVisibility()">
+                <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+            </span>
+        </div>
+
+        <button [disabled]="frm.invalid" class="w-100 btn btn-lg btn-danger my-4" type="submit">Accedi</button>
+
+        <p>
+            Non hai un account? <a routerLink="/register"> Registrati</a>
+        </p>
+    </form>
+</main>

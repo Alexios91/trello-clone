@@ -1,0 +1,33 @@
+<main class="form-signin w-100 mt-5 m-auto">
+    <form class="mt-5" [formGroup]="frm" (ngSubmit)="register()">
+        <h1 class="h1 fw-normal">Registrati</h1>
+
+        <div class="form-floating">
+            <input [(ngModel)]="model.nome" type="text" class="form-control" id="nome" placeholder="Nome"
+                formControlName="nome">
+            <label for="nome">Nome</label>
+        </div>
+        <div class="form-floating">
+            <input [(ngModel)]="model.cognome" type="text" class="form-control" id="cognome" placeholder="Cognome"
+                formControlName="cognome">
+            <label for="cognome">Cognome</label>
+        </div>
+        <div class="form-floating">
+            <input [(ngModel)]="model.email" type="email" class="form-control" id="email"
+                placeholder="Email@example.com" formControlName="email">
+            <label for="email">Email</label>
+        </div>
+        <div class="form-floating">
+            <input [(ngModel)]="model.password" type="password" class="form-control" id="password"
+                placeholder="Password" formControlName="password">
+            <label for="password">Password</label>
+        </div>
+        <div class="form-floating">
+            <input [(ngModel)]="model.conferma_password" type="password" class="form-control" id="conferma_password"
+                placeholder="Conferma Password" formControlName="conferma_password">
+            <label for="conferma_password">Password</label>
+        </div>
+
+        <button [disabled]="frm.invalid" class="w-100 btn btn-lg btn-danger my-4" type="submit">Crea Account</button>
+    </form>
+</main>

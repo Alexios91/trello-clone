@@ -1,0 +1,81 @@
+// Variabili
+$primary-color: #ff6b6b;
+$secondary-color: #ffa500;
+$tertiary-color: #ffd700;
+$dark-bg-color: #6c757db3;
+$dark-color: #000000;
+$light-color: #ffffff;
+
+.back {
+    font-family: 'Montserrat', sans-serif;
+    background: url("https://www.kanaloa.it/wp-content/uploads/2019/02/kanaloa-viaggi-in-libert%C3%A0-seychelles-natura-incontaminata-07.jpg") center/cover no-repeat;
+    min-height: 92vh;
+}
+
+.offcanvas-start,
+.offcanvas-end {
+    background-color: $secondary-color;
+    margin-top: 56px;
+    max-width: 260px;
+
+    .offcanvas-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: -25px;
+    }
+
+    .offcanvas-header,
+    .offcanvas-body {
+        a {
+            font-size: 0.9em;
+            display: block;
+            color: $dark-color;
+            text-decoration: none;
+            margin-bottom: 6px;
+
+            &:hover {
+                background-color: $tertiary-color;
+                border-radius: 5px;
+            }
+        }
+
+        .btn-close {
+            padding: 8px;
+            color: $dark-color;
+            font-size: 15px;
+            line-height: 1;
+        }
+
+        .offcanvas-title,
+        h5 {
+            font-size: 1.1em;
+            font-weight: bold;
+        }
+
+        h6 {
+            margin-top: 16px;
+            margin-bottom: 8px;
+            font-size: 1em;
+            font-weight: bold;
+        }
+    }
+}
+
+.navbar {
+    background-color: $dark-bg-color;
+
+    .navbar-brand,
+    .nav-link {
+        color: $light-color;
+    }
+
+    .selected {
+        outline: 2px solid $tertiary-color;
+    }
+}
+
+.modal-content {
+    background-color: $primary-color;
+    padding: 6px 14px;
+}

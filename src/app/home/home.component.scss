@@ -1,0 +1,87 @@
+//Variabili
+$primary-color: #ff6b6b;
+$secondary-color: #808080;
+$tertiary-color: #ffd700;
+$dark-color: #1e1818;
+$light-color: #ffffff;
+
+
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 86vh;
+    text-align: center;
+    color: $tertiary-color;
+
+    h1 {
+        font-size: 4.5em;
+    }
+
+    h2 {
+        font-size: 2.5em;
+    }
+
+    p {
+        font-size: 1.5em;
+
+        a {
+            text-decoration: none;
+            color: $primary-color;
+            cursor: pointer;
+
+            &:hover {
+                color: $light-color;
+            }
+        }
+    }
+}
+
+#link {
+    display: grid;
+    grid-template-columns: repeat(1, 3fr);
+    text-align: center;
+    background-color: $dark-color;
+    color: $secondary-color;
+    padding: 25px 0 0 0;
+
+    .logo,
+    .links {
+        ul {
+            list-style: none;
+
+            li {
+                display: inline-block;
+
+
+                a {
+                    color: $secondary-color;
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $light-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .logo {
+        i {
+            margin-right: 30px;
+            font-size: 2rem;
+        }
+    }
+
+    .links {
+        ul {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}
