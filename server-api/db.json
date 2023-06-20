@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "email": "paperino@hotmail.it",
+      "password": "$2a$10$CwzDn3GOQmKQHxgSLtakSeSkORMsL92yIa93Nf.PERaIhvol92AYe",
+      "nome": "Paperino",
+      "cognome": "Verdi",
+      "id": 1
+    },
+    {
+      "email": "topolino@gmail.com",
+      "password": "$2a$10$49GInhpwp9AU8xRcxSCT7.dd0djSaeKL5gFhW0HyQa/aXltmhtCz2",
+      "nome": "Topolino",
+      "cognome": "Rossi",
+      "conferma_password": "Asdf1234",
+      "id": 2
+    },
+    {
+      "email": "pippo@gmail.com",
+      "password": "$2a$10$67fhf21J5YiRN6g.WzA68.fiHtA1A/XyrsOvMPjPSRE6TqXFxZDr.",
+      "nome": "Pippo",
+      "cognome": "Bianchi",
+      "conferma_password": "Zxcv1234",
+      "id": 3
+    }
+  ]
+}
